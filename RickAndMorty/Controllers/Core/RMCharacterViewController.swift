@@ -24,5 +24,9 @@ final class RMCharacterViewController: UIViewController {
             ]
         )
         print(request.url)
+
+        RMService.shared.execute(request, expecting: RMCharacter.self) { result in
+           
+        }
     }
 }
