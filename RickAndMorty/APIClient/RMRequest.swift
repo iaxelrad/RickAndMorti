@@ -12,7 +12,7 @@ final class RMRequest {
 
     // Base url
     private struct Constants {
-        static let baseUrl = "https://rickandmortyapi.com/api/"
+        static let baseUrl = "https://rickandmortyapi.com/api"
     }
 
     // Endpoint
@@ -34,7 +34,7 @@ final class RMRequest {
         if !pathComponents.isEmpty {
             string += "/"
             pathComponents.forEach({
-                string += "/\($0)"
+                string += "\($0)"
             })
         }
 
