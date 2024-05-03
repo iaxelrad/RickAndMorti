@@ -26,7 +26,7 @@ class RMEpisodeDetailViewViewModel {
             switch result {
             case .success(let episode):
                 print(String(describing: episode))
-            case .failure(let failure):
+            case .failure:
                 break
             }
         }
