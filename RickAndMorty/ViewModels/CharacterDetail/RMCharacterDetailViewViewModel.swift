@@ -29,7 +29,7 @@ final class RMCharacterDetailViewViewModel {
 
     private func setUpSections() {
         sections = [
-            .photo(viewModel: .init()),
+            .photo(viewModel: .init(imageUrl: URL(string: character.image))),
             .information(viewModels: [
                 .init(),
                 .init(),
