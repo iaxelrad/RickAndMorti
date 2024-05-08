@@ -26,7 +26,7 @@ final class RMCharacterViewController: UIViewController, RMCharacterListViewDele
 
     @objc
     private func didTapSearch() {
-        let vc = RMSearchViewController(config: RMSearchViewController.Config(type: .character))
+        let vc = RMSearchViewController(config: .init(type: .character))
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
