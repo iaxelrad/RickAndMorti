@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3DB2632BEFA5FD001A836E /* RMSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3DB2622BEFA5FD001A836E /* RMSearchResultsView.swift */; };
 		DC6B705F2BDD95DB0023BCD2 /* RMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B705E2BDD95DB0023BCD2 /* RMLocation.swift */; };
 		DC6B70612BDD95E80023BCD2 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B70602BDD95E80023BCD2 /* RMCharacter.swift */; };
 		DC6B70632BDD95F60023BCD2 /* RMEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B70622BDD95F60023BCD2 /* RMEpisode.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC3DB2622BEFA5FD001A836E /* RMSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultsView.swift; sourceTree = "<group>"; };
 		DC6B705E2BDD95DB0023BCD2 /* RMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocation.swift; sourceTree = "<group>"; };
 		DC6B70602BDD95E80023BCD2 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		DC6B70622BDD95F60023BCD2 /* RMEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisode.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				DC6D7F902BEBF75700977F01 /* RMSearchView.swift */,
 				DC6D7F952BEBFC1B00977F01 /* RMNoSearchResultsView.swift */,
 				DC6D7F992BEBFC7900977F01 /* RMSearchInputView.swift */,
+				DC3DB2622BEFA5FD001A836E /* RMSearchResultsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				DC6D7F982BEBFC4A00977F01 /* RMNoSearchResultsViewViewModel.swift in Sources */,
 				DC6B707E2BDFE03E0023BCD2 /* RMGetAllCharactersResponse.swift in Sources */,
 				DC6B70782BDE82F00023BCD2 /* RMCharacterStatus.swift in Sources */,
+				DC3DB2632BEFA5FD001A836E /* RMSearchResultsView.swift in Sources */,
 				DC6B70682BDD96E90023BCD2 /* RMLocationViewController.swift in Sources */,
 				DC6D7F8E2BEBE7AE00977F01 /* RMLocationDetailViewViewModel.swift in Sources */,
 				DCDE3E732BE01E7A00E87013 /* RMCharacterDetailViewController.swift in Sources */,
