@@ -23,7 +23,16 @@ final class RMLocationView: UIView {
             UIView.animate(withDuration: 0.3) {
                 self.tableView.alpha = 1
             }
+            viewModel?.registerDidFinishPaginationBlock({ [weak self] in
+                DispatchQueue.main.async {
+                    // Removing loading indicator
+                    self?.tableView.tableFooterView = nil
+                    // Reload data
+                    self?.tableView.reloadData()
+                }
+            })
         }
+
     }
 
     private let tableView: UITableView = {
@@ -131,10 +140,6 @@ extension RMLocationView: UIScrollViewDelegate {
                     self?.showLoadingIndicator()
                 }
                 viewModel.fetchAdditionalLocations()
-
-                DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-                    self?.tableView.reloadData()
-                })
             }
             t.invalidate()
         }
