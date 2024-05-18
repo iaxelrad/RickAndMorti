@@ -94,6 +94,7 @@ class RMSearchResultsView: UIView {
         tableView.dataSource = self
         tableView.isHidden = false
         self.collectionView.isHidden = true
+        self.locationCellViewModels = viewModels
         tableView.reloadData()
     }
 
