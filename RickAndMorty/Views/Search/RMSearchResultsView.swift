@@ -311,9 +311,7 @@ extension RMSearchResultsView: UIScrollViewDelegate {
             let totalScrollViewFixedHeight = scrollView.frame.size.height
 
             if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
-                DispatchQueue.main.async {
-                    self?.showTableLoadingIndicator()
-                }
+                self?.showTableLoadingIndicator()
                 viewModel.fetchAdditionalLocations { [weak self] newResults in
                     // Refresh table
                     self?.tableView.tableFooterView = nil
