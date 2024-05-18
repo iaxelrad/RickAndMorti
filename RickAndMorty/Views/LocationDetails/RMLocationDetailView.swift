@@ -91,7 +91,7 @@ final class RMLocationDetailView: UIView {
         collectionView.register(RMEpisodeInfoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: RMEpisodeInfoCollectionViewCell.cellIdentifier)
         collectionView.register(RMCharacterCollectionViewCell.self,
-                                forCellWithReuseIdentifier: RMCharacterCollectionViewCell.celIdentifier)
+                                forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
         return collectionView
     }
 
@@ -143,7 +143,7 @@ extension RMLocationDetailView: UICollectionViewDelegate, UICollectionViewDataSo
         case .characters(let viewModels):
             let cellViewModel = viewModels[indexPath.row]
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: RMCharacterCollectionViewCell.celIdentifier,
+                withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier,
                 for: indexPath
             ) as? RMCharacterCollectionViewCell else {
                 fatalError()

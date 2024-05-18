@@ -25,13 +25,13 @@ final class RMSearchViewViewModel {
 
     private var searchResultModel: Codable?
 
-    //MARK: - Init
+    // MARK: - Init
 
     init(config: RMSearchViewController.Config) {
         self.config = config
     }
 
-    //MARK: - Public
+    // MARK: - Public
 
     public func registerSearchResultHandler(_ block: @escaping (RMSearchResultViewModel) -> Void) {
         self.searchResultHandler = block
@@ -50,15 +50,14 @@ final class RMSearchViewViewModel {
         var queryParams: [URLQueryItem] = [
             URLQueryItem(name: "name", value: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
         ]
-
-        // Add Options
+        // Add options
         queryParams.append(contentsOf: optionMap.enumerated().compactMap({ _, element in
             let key: RMSearchInputViewViewModel.DynamicOption = element.key
             let value: String = element.value
             return URLQueryItem(name: key.queryArgument, value: value)
         }))
 
-        //Create request
+        // Create request
         let request = RMRequest(
             endpoint: config.type.endpoint,
             queryParameters: queryParams
@@ -67,16 +66,16 @@ final class RMSearchViewViewModel {
         switch config.type.endpoint {
         case .character:
             makeSearchAPICall(RMGetAllCharactersResponse.self, request: request)
-        case .location:
-            makeSearchAPICall(RMGetAllLocationsResponse.self, request: request)
         case .episode:
             makeSearchAPICall(RMGetAllEpisodesResponse.self, request: request)
+        case .location:
+            makeSearchAPICall(RMGetAllLocationsResponse.self, request: request)
         }
     }
 
     private func makeSearchAPICall<T: Codable>(_ type: T.Type, request: RMRequest) {
-        RMService.shared.execute(request, expecting: type.self) { [weak self] result in
-            //Notify view of results, no results or error
+        RMService.shared.execute(request, expecting: type) { [weak self] result in
+            // Notify view of results, no results, or error
 
             switch result {
             case .success(let model):
@@ -115,7 +114,7 @@ final class RMSearchViewViewModel {
             }))
             nextUrl = locationsResults.info.next
         }
-        
+
         if let results = resultsVM {
             self.searchResultModel = model
             let vm = RMSearchResultViewModel(results: results, next: nextUrl)
@@ -141,7 +140,7 @@ final class RMSearchViewViewModel {
     }
 
     public func registerOptionChangeBlock(
-        _ block: @escaping((RMSearchInputViewViewModel.DynamicOption, String)) -> Void
+        _ block: @escaping ((RMSearchInputViewViewModel.DynamicOption, String)) -> Void
     ) {
         self.optionMapUpdateBlock = block
     }
